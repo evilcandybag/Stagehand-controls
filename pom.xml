@@ -70,7 +70,7 @@
     </dependency>
     <dependency>
     	<groupId>se.stagehand</groupId>
-    	<artifactId>Stagehand-editor</artifactId>
+    	<artifactId>Stagehand-swing</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
@@ -139,7 +139,7 @@
                   <type>jar</type>
                   <overWrite>true</overWrite>
                   <!-- THIS IS A VERY UGLY WAY TO DO IT; MIGHT WANNA CHANGE TO COOLER STUFF IN TEH FUTUR -->
-                  <outputDirectory>${project.build.directory}/../../../Stagehand-core/Stagehand-editor/plugins/</outputDirectory>
+                  <outputDirectory>${project.build.directory}/../../../Stagehand-core/Stagehand-swing/plugins/</outputDirectory>
                   <destFileName>${project.artifactId}-${project.version}.jar</destFileName>
                 </artifactItem>
               </artifactItems>

@@ -10,7 +10,7 @@ class Hotkey extends AbstractControl {
     
   var key = Key.Undefined
   
-  def executeInstructions {
+  def executeInstructions(params: Any*){
     signal(Start[Key.Value](key))
   }
   

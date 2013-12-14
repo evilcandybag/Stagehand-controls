@@ -8,6 +8,6 @@ class ControlsPlugin extends ScriptPlugin {
   val name = "ControlsPlugin"
     
   val guis = List(HotkeyGUI)
-  def scriptcomponents: Array[ScriptComponent] = Array(new Hotkey)
+  val scriptcomponents: Array[ScriptComponent] = Array(new Hotkey)
   
 }

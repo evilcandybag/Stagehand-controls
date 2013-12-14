@@ -38,7 +38,7 @@ class HotkeyButton(script: Hotkey) extends EditorScriptButton(script) {
 }
 
 class HotkeyPlayerNode(script: Hotkey) extends PlayerScriptNode[Hotkey](script) {
-  
+  def title = script.displayName
 }
 
 class HotkeyNode(script: Hotkey) extends EditorScriptNode[Hotkey](script) with OutputGUI[Hotkey] {

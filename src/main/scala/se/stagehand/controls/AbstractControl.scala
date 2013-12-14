@@ -11,10 +11,4 @@ import scala.xml.Elem
 abstract class AbstractControl(id:Int) extends ScriptComponent(id) with Output {
   def this() = this(ID.unique)
   
-  def signal(msg: ScriptMessage) {
-    receivers.foreach( x => 
-      x ! msg
-    )
-  }
-  
 }

@@ -5,7 +5,9 @@ import scala.xml._
 import scala.swing._
 import scala.swing.event.Key
 
-class Hotkey extends AbstractControl {
+class Hotkey(id:Int) extends AbstractControl(id) {
+  def this() = this(ID.unique)
+  
   override def componentName = "Hotkey"
     
   var key = Key.Undefined

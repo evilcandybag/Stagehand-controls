@@ -8,6 +8,9 @@ import scala.swing.event.KeyPressed
 import se.stagehand.swing.lib._
 import scala.swing.event.KeyPressed
 import se.stagehand.swing.player.PlayerScriptNode
+import se.stagehand.swing.player.Player
+import scala.swing.event.KeyReleased
+import se.stagehand.lib.Log
 
 object HotkeyGUI extends ScriptGUI {
   val peer = classOf[Hotkey]
@@ -38,11 +41,23 @@ class HotkeyButton(script: Hotkey) extends EditorScriptButton(script) {
 }
 
 class HotkeyPlayerNode(script: Hotkey) extends PlayerScriptNode[Hotkey](script) {
+  private val log = Log.getLog(this.getClass())
   def title = script.displayName
+  
+  KeyEventHandler.register(this)
+  
+  layout(new Label(script.key.toString)) = BorderPanel.Position.Center
+  reactions += {
+    case e:KeyReleased if e.key == script.key => {
+      log.debug("Pressed " + e.key + " in script " + script.key )
+      script.executeInstructions(e.key)
+    }
+  }
+  repaint
+  revalidate
 }
 
 class HotkeyNode(script: Hotkey) extends EditorScriptNode[Hotkey](script) with OutputGUI[Hotkey] {
-  val me = this
   
   val butt:Button = new Button("") {
     
@@ -60,7 +75,6 @@ class HotkeyNode(script: Hotkey) extends EditorScriptNode[Hotkey](script) with O
     
     def updateText {
       text = script.key.toString
-      me.peer.setSize(me.preferredSize)
     }
   }
   pan.layout(butt) = BorderPanel.Position.Center

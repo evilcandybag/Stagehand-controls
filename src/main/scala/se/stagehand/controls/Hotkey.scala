@@ -9,6 +9,7 @@ class Hotkey(id:Int) extends AbstractControl(id) {
   def this() = this(ID.unique)
   
   override def componentName = "Hotkey"
+  val description = "A script that produces an output signal when a key is pressed."
     
   var key = Key.Undefined
   

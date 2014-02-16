@@ -135,8 +135,7 @@
                   <overWrite>true</overWrite>
                   <!-- THIS IS A VERY UGLY WAY TO DO IT; MIGHT WANNA CHANGE TO COOLER STUFF IN TEH FUTUR -->
                   <outputDirectory>${project.build.directory}/../../../Stagehand-core/plugins/</outputDirectory>
-                  <destFileName>${project.artifactId}-${project.version}.jar</destFileName>
-                </artifactItem>
+                  <destFileName>${project.artifactId}.jar</destFileName>                </artifactItem>
               </artifactItems>
               <outputDirectory>${project.build.directory}/wars</outputDirectory>
               <overWriteReleases>false</overWriteReleases>

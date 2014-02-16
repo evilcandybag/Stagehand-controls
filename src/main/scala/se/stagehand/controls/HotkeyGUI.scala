@@ -79,6 +79,7 @@ class HotkeyNode(script: Hotkey) extends EditorScriptNode[Hotkey](script) with O
     def updateText {
       text = script.key.toString
     }
+    updateText
   }
   pan.layout(butt) = BorderPanel.Position.Center
 }

@@ -7,7 +7,7 @@ class ControlsPlugin extends ScriptPlugin {
 
   val name = "ControlsPlugin"
     
-  val guis = List(HotkeyGUI)
-  val scriptcomponents: Array[ScriptComponent] = Array(new Hotkey)
+  val guis = List(HotkeyGUI, TargetGroupGUI, DynamicTargetGUI)
+  val scriptcomponents: Array[ScriptComponent] = Array(new Hotkey, new TargetGroup, new DynamicTargets)
   
 }
